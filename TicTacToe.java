@@ -1,29 +1,9 @@
 
 import components.simplewriter.SimpleWriter;
-
-
-
 import components.simplewriter.SimpleWriter1L;
 import components.simplereader.SimpleReader1L;
-
-
-
-
-
-
-
-
-
-
-
-
 import java.util.ArrayList;
 import java.util.Arrays;
-/**
- * Simple HelloWorld program (clear of Checkstyle and FindBugs warnings).
- * 
- * @author P. Bucci
- */
 import java.util.List;
 
 
@@ -108,7 +88,6 @@ public class TicTacToe {
 		if(currgame.isTerminal(state)){
 			return (int) currgame.getUtility(state,player);
 		} 
-		
 		
 		//Keeps track of the number of rows with n X's or O's.
 		for (int row=0; row<3; row++){
@@ -228,9 +207,6 @@ public class TicTacToe {
 		}
 		}
 	
-		
-		
-		
 		int eval=3*X2 + X1 -(3*O2 + O1);
 		return(eval);
 	}
@@ -289,19 +265,13 @@ public class TicTacToe {
 		while(!currgame.isTerminal(initState)){
 			
 			XYLocation action=search.makeDecision(initState);
-			
 			makeMove(initState,action);
-
-            
 			out.println(initState.toString());
 			out.println("Current Player: "+ initState.getPlayerToMove());
 			
 		}
 		
 		out.println("----------------------------------------");
-		
-		
-		
 		out.println("The optimal play for X using H-minimax and a search limit of 4 plies: ");
 		
 		while (! currgame.isTerminal(state2)){
@@ -315,12 +285,6 @@ public class TicTacToe {
 			out.println();
 			out.println("Current Player: "+ state2.getPlayerToMove());
 		}
-		
-
-
-
-
-
 		out.close();
 	}
 
